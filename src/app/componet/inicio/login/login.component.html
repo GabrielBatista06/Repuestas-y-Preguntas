@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="container">
+    <div class="row" style="width: 100%">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center" style="padding: 20px; border-radius: 10px">
+                <h3>LOGIN</h3>
+                <br>
+                <form [formGroup]="login" (ngSubmit)=log()>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Usuario" formControlName="usuario">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Password"  formControlName="Password">
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary mr-4" type="submit">Aceptar</button>
+                        <button class="btn btn-secondary" style="background-color: rgb(47, 59, 59);" routerLink="/bienvenida">Regresar</button>
+                    </div>
+
+                    <div class="form-group">
+                        <a style="color: brown;cursor: pointer;text-decoration: none;"routerLink="/registro">Crear cuenta</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

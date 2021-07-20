@@ -1,6 +1,8 @@
+//Modulos
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import{ReactiveFormsModule} from '@angular/forms'
+//Componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './componets/inicio/inicio.component';
@@ -14,11 +16,13 @@ import { RegistroComponent } from './componet/inicio/registro/registro.component
     InicioComponent,
     BienvenidaComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
