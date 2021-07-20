@@ -7,9 +7,10 @@ import { RegistroComponent } from './componet/inicio/registro/registro.component
 const routes: Routes = [
   //{path: '', redirectTo:'bienvenida,',pathMatch:'full'},
  { path: '', component: BienvenidaComponent },
+ { path: 'bienvenida', component: BienvenidaComponent },
  { path: 'registro', component: RegistroComponent },
  { path: 'login', component: LoginComponent },
- {path: '**', redirectTo:'/bienvenida,',pathMatch:'full'},
+ {path: '**', redirectTo:'/bienvenida,',pathMatch:'full'}, 
 
 
 ];

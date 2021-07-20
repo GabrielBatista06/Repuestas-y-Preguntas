@@ -5,20 +5,31 @@
                 <h3>LOGIN</h3>
                 <br>
                 <form [formGroup]="login" (ngSubmit)=log()>
-                    <div class="form-group">
+                    <div class="form-group" style="text-align: start;">
                         <input type="text" class="form-control" placeholder="Usuario" formControlName="usuario">
+                        <span class="text-danger ml-2" *ngIf="login.controls['usuario'].errors?.required && login.controls['usuario'].touched" >
+                          
+                            Este campo es <strong> obligatorio*</strong>
+
+                        </span>
                     </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Password"  formControlName="Password">
+                    <div class="form-group" style="text-align: start;">
+                        <input type="password" class="form-control" placeholder="Password" formControlName="password" >
+                        <span class="text-danger ml-2"
+                         *ngIf="login.controls['password'].errors?.required && login.controls['usuario'].touched" >
+                            Este campo es <strong> obligatorio*</strong>
+                        </span>
                     </div>
 
                     <div class="form-group">
-                        <button class="btn btn-primary mr-4" type="submit">Aceptar</button>
-                        <button class="btn btn-secondary" style="background-color: rgb(47, 59, 59);" routerLink="/bienvenida">Regresar</button>
+                        <button class="btn btn-primary mr-4 btn-login" [disabled]="login.invalid" type="submit">Aceptar</button>
+                        <button class="btn btn-secondary" style="background-color: rgb(47, 59, 59);"
+                            routerLink="/bienvenida">Regresar</button>
                     </div>
 
                     <div class="form-group">
-                        <a style="color: brown;cursor: pointer;text-decoration: none;"routerLink="/registro">Crear cuenta</a>
+                        <a style="color: brown;cursor: pointer;text-decoration: none;" routerLink="/registro">Crear
+                            cuenta</a>
                     </div>
                 </form>
             </div>
