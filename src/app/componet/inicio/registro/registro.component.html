@@ -5,18 +5,37 @@
             <div class="card text-center" style="padding: 20px;">
                 <h3>Registrarse</h3>
                 <br>
-                <form [formGroup]="register">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Usuario">
+                <form [formGroup]="register" (ngSubmit)="registrarUsuario()">
+                    <div class="form-group" style="text-align: start;">
+                        <input type="text" class="form-control" placeholder="Usuario" formControlName="usuario">
+                        <span class="text-danger ml-2"
+                            *ngIf="register.controls['usuario'].errors?.required && register.controls['usuario'].touched">
+                            Este campo es <strong> obligatorio*</strong>
+                        </span>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Contraseña">
+                    <div class="form-group" style="text-align: start;">
+                        <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+
+                        <span class="text-danger ml-2"
+                            *ngIf="register.controls['password'].errors?.required && register.controls['password'].touched">
+                            Este campo es <strong> obligatorio*</strong>
+                        </span>
+
+                        <span class="text-danger ml-2"
+                            *ngIf="register.controls['password'].errors?.minlength && register.controls['password'].touched">
+                            La Contraseña debe de tener <strong> como minimo 6 caracteres*</strong>
+                        </span>
+
+
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Confirmar Contraseña">
+                    <div class="form-group" style="text-align: start;">
+                        <input type="password" class="form-control" placeholder="Repetir Contraseña" formControlName="confirmPassword">
+                        <span class="text-danger ml-2">
+                            Contraseñas<strong> no coinciden*</strong>
+                        </span>
                     </div>
                     <div class="for-group">
-                        <button class="btn btn-primary mr-4 btn-reg">Aceptar</button>
+                        <button class="btn btn-primary mr-4 btn-reg" type="submit">Aceptar</button>
                         <button class="btn btn-secondary" routerLink="/login">Regresar</button>
                     </div>
                 </form>
