@@ -4,6 +4,14 @@
     align-items: center;
     min-height: 100vh;
 }
-.btn-primary{
-    background-color: rgb(78, 143, 241);
+.btn-login{
+    background-color: rgb(14, 54, 231);
+    border:double;
+    border-color: rgb(63, 103, 121);
+}
+.btn-back{
+    background-color: rgb(14, 54, 231);
+    border:double;
+    border-color: rgb(63, 103, 121);
+
 }
