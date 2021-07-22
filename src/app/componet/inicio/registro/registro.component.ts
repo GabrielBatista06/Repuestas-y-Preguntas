@@ -15,7 +15,7 @@ export class RegistroComponent implements OnInit {
       password: ['', [Validators.required,Validators.minLength(6)]],
       confirmPassword: ['']
 
-    }, {Validator: this.checkPassword });
+    }, {validators: this.checkPassword });
   }
 
   ngOnInit(): void {
