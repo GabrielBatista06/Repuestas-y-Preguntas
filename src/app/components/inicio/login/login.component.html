@@ -23,14 +23,16 @@
                     </div>
 
                     <div class="form-group">
-                        <button class="btn btn-primary mr-4 btn-login" [disabled]="login.invalid"
-                            type="submit">Aceptar</button>
-                        <button class="btn btn-secondary btn-back" style="background-color: rgb(47, 59, 59);"
+                        <button class="btn btn-primary mr-4  btn-back" style="background-color: rgb(47, 59, 59);"
                             routerLink="/inicio">Regresar</button>
+                        <button class="btn btn-secondary btn-login" [disabled]="login.invalid"
+                            type="submit">Aceptar</button>
+
                     </div>
 
                     <div class="form-group">
-                        <a style="color: brown;cursor: pointer;text-decoration: none;" routerLink="/inicio/registro">Crear
+                        <a style="color: brown;cursor: pointer;text-decoration: none;"
+                            routerLink="/inicio/registro">Crear
                             cuenta</a>
                     </div>
                 </form>
