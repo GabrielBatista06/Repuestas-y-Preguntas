@@ -6,9 +6,13 @@ import{ReactiveFormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './componets/inicio/inicio.component';
-import { BienvenidaComponent } from './componet/inicio/bienvenida/bienvenida.component';
-import { LoginComponent } from './componet/inicio/login/login.component';
-import { RegistroComponent } from './componet/inicio/registro/registro.component';
+import { BienvenidaComponent } from './components/inicio/bienvenida/bienvenida.component';
+import { LoginComponent } from './components/inicio/login/login.component';
+import { RegistroComponent } from './components/inicio/registro/registro.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CambiarPasswordComponent } from './components/dashboard/cambiar-password/cambiar-password.component';
+import { CuestionarioComponent } from './components/dashboard/cuestionario/cuestionario.component';
+import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,10 @@ import { RegistroComponent } from './componet/inicio/registro/registro.component
     BienvenidaComponent,
     LoginComponent,
     RegistroComponent,
+    DashboardComponent,
+    CambiarPasswordComponent,
+    CuestionarioComponent,
+    NavbarComponent,
     
   ],
   imports: [
