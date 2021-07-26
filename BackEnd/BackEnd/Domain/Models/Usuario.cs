@@ -11,10 +11,10 @@ namespace BackEnd.Domain.Models
     {
         public int Id { get; set; }
         [Required]
-        [Column(TypeName ="varcha(20)")]
+        [Column(TypeName ="varchar(20)")]
         public string NombreUsuario { get; set; }
         [Required]
-        [Column(TypeName = "varcha(50)")]
+        [Column(TypeName = "varchar(50)")]
         public string Password { get; set; }
     }
 }
