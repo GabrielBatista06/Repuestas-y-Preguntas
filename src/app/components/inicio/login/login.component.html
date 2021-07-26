@@ -3,8 +3,9 @@
         <div class="col-lg-6 offset-lg-3">
             <div class="card text-center" style="padding: 20px; border-radius: 10px">
                 <h3>LOGIN</h3>
-                <br>
-                <form [formGroup]="login" (ngSubmit)=log()>
+                
+                <app-loading *ngIf="loading"></app-loading>
+                <form [formGroup]="login" (ngSubmit)=log() style="margin-top: 10px;">
                     <div class="form-group" style="text-align: start;">
                         <input type="text" class="form-control" placeholder="Usuario" formControlName="usuario">
                         <span class="text-danger ml-2"

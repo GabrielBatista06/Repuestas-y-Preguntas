@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:'cambiarPassword',component:CambiarPasswordComponent}
  ]},
  {path: '', redirectTo : '/inicio', pathMatch: 'full'},
-
+ {path: '**', redirectTo : '/inicio', pathMatch: 'full'},
 ];
 
 
