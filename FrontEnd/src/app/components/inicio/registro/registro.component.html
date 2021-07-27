@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row" style="width: 100%;">
+        <div class="col-lg-6 offset-lg-3">
+
+            <div class="card text-center" style="padding: 20px;">
+                <h3>Registrarse</h3>
+                
+                <app-loading *ngIf="loadin"></app-loading>
+                <form [formGroup]="register" (ngSubmit)="registrarUsuario()" style="padding: 10px;">
+                    <div class="form-group" style="text-align: start;">
+                        <input type="text" class="form-control" placeholder="Usuario" formControlName="usuario">
+                        <span class="text-danger ml-2"
+                            *ngIf="register.controls['usuario'].errors?.required && register.controls['usuario'].touched">
+                            Este campo es <strong> obligatorio*</strong>
+                        </span>
+                    </div>
+                    <div class="form-group" style="text-align: start;">
+                        <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+
+                        <span class="text-danger ml-2"
+                            *ngIf="register.controls['password'].errors?.required && register.controls['password'].touched">
+                            Este campo es <strong> obligatorio*</strong>
+                        </span>
+
+                        <span class="text-danger ml-2"
+                            *ngIf="register.controls['password'].errors?.minlength && register.controls['password'].touched">
+                            La Contraseña debe de tener <strong> como minimo 6 caracteres*</strong>
+                        </span>
+
+
+                    </div>
+                    <div class="form-group" style="text-align: start;">
+                        <input type="password" class="form-control" placeholder="Repetir Contraseña"
+                            formControlName="confirmPassword">
+                        <span class="text-danger ml-2"
+                            *ngIf="register.hasError('notSame') && register.controls['confirmPassword'].touched">
+                            Contraseñas<strong> no coinciden*</strong>
+                        </span>
+                    </div>
+                    <div class="for-group">
+                        <button class="btn btn-primary mr-4" style="background-color: rgb(47, 59, 59);"
+                            routerLink="/inicio/login">Regresar</button>
+                        <button class="btn btn-secondary  btn-reg" type="submit">Aceptar</button>
+
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+p{
+    font-family: 'Otomanopee One', sans-serif;
+    font-size: 40px;
+}
+
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+
+}
+
+hr{
+    border-width: 3px;
+    max-width: 75px;
+}
+
+.content{
+    justify-content: space-between;
+    align-self: center;
+}
+
+.btn-xl{
+    background-color: darkcyan;
+    margin: 10px;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+}
+
+:hover .btn-xl {
+    opacity: 90%;
+    background-color: cornflowerblue;
+    border-width: 4px;
+}
