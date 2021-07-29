@@ -7,6 +7,7 @@ C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreap
 C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\BackEnd.dll
 C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\BackEnd.pdb
 C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
