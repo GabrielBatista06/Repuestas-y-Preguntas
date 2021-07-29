@@ -30,6 +30,10 @@ export class RegistroComponent implements OnInit {
   }
 
   registrarUsuario():void{
+
+    if(!this.register.valid){
+      return 
+    }
     console.log(this.register);
 
     const usuario: Usuario={

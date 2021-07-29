@@ -18,7 +18,7 @@
                     <div class="form-group" style="text-align: start;">
                         <input type="password" class="form-control" placeholder="Password" formControlName="password">
                         <span class="text-danger ml-2"
-                            *ngIf="login.controls['password'].errors?.required && login.controls['usuario'].touched">
+                            *ngIf="login.controls['password'].errors?.required && login.controls['password'].touched">
                             Este campo es <strong> obligatorio*</strong>
                         </span>
                     </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-cuestionario',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CuestionarioComponent implements OnInit {
 
-  constructor() { }
+  nombreUsuario: any='';
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
+    this.getNombreUsuario();
+    // this.nombreUsuario = this.loginService.();
   }
 
+  getNombreUsuario():void{
+    console.log(this.loginService.getToken());
+    this.nombreUsuario=this.loginService.getToken().sub;
+  }
 }

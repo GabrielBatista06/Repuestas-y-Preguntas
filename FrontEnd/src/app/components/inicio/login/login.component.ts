@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { LoginService } from 'src/app/services/login.service';
 import { Usuario } from '../../../models/usuario';
 
 @Component({
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private toastr: ToastrService,
-    private router: Router
+    private router: Router,
+    private loginService: LoginService
   ) {
     this.login = this.fb.group({
       usuario: ['', Validators.required],
@@ -27,31 +29,40 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   log(): void {
-    console.log(this.login);
-
     const usuario: Usuario = {
       NombreUsuario: this.login.value.usuario,
+      Password: this.login.value.password
 
-      Password: this.login.value.password,
     };
-
-    this.nombre_acceso = usuario.NombreUsuario;
     this.loading=true;
-    setTimeout(() => {
-      if (
-        usuario.NombreUsuario === 'Gabriel' &&
-        usuario.Password === '123456'
-      ) {
-        this.login.reset();
-        this.toastr.success('Acceso exitoso: ' + this.nombre_acceso, 'Well!');
-        this.router.navigate(['/dashboard']);
-      } else {
-        this.toastr.error('Usuario o contraseña incorrectos', 'Error');
-        this.login.reset();
-      }
+    this.loginService.login(usuario).subscribe(data =>{
+      
       this.loading=false;
-    }, 3000);
+      this.loginService.setGuardarName(data.token);
+      this.router.navigate(['/dashboard']);
+    },error => {
+      console.log(error);
+      this.loading=false;
+      this.toastr.error(error.error.message, 'Error');
+      this.login.reset();
+     
+    })
 
-    console.log(usuario);
+
+
+    // setTimeout(() => {
+    //   if (
+    //     usuario.NombreUsuario === 'Gabriel' &&
+    //     usuario.Password === '123456'
+    //   ) {
+    //     this.login.reset();
+    //     this.toastr.success('Acceso exitoso: ' + this.nombre_acceso, 'Well!');
+    //     this.router.navigate(['/dashboard']);
+    //   } else {
+    //     this.toastr.error('Usuario o contraseña incorrectos', 'Error');
+    //     this.login.reset();
+    //   }
+    //   this.loading=false;
+    // }, 3000);
   }
 }

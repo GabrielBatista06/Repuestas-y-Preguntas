@@ -5,9 +5,11 @@ import{ReactiveFormsModule} from '@angular/forms'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
-import{HttpClientModule}from '@angular/common/http'
+import{HttpClientModule, HTTP_INTERCEPTORS}from '@angular/common/http';
 
+// Interceptos
 
+import{AddTokenInterceptor} from '../app/helpers/add-token.interceptor';
 //Componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +22,9 @@ import { CambiarPasswordComponent } from './components/dashboard/cambiar-passwor
 import { CuestionarioComponent } from './components/dashboard/cuestionario/cuestionario.component';
 import { NavbarComponent } from './components/dashboard/navbar/navbar.component';
 import { LoadingComponent } from './shared/loading/loading.component';
+import { NuevoCuestionarioComponent } from './components/dashboard/cuestionario/nuevo-cuestionario/nuevo-cuestionario.component';
+import { PasoUnoComponent } from './components/dashboard/cuestionario/nuevo-cuestionario/paso-uno/paso-uno.component';
+import { NuevaPreguntaComponent } from './components/dashboard/cuestionario/nuevo-cuestionario/paso-dos/nueva-pregunta/nueva-pregunta.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,9 @@ import { LoadingComponent } from './shared/loading/loading.component';
     CuestionarioComponent,
     NavbarComponent,
     LoadingComponent,
+    NuevoCuestionarioComponent,
+    PasoUnoComponent,
+    NuevaPreguntaComponent,
     
   ],
   imports: [
@@ -43,7 +51,7 @@ import { LoadingComponent } from './shared/loading/loading.component';
     ToastrModule.forRoot(), // ToastrModule added
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
