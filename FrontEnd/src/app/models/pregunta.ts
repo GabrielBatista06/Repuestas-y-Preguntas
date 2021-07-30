@@ -5,8 +5,8 @@ export class Pregunta{
     listRepuesta: Repuesta[];
     hide?:boolean;
 
-    constructor(descripcion: string, repuesta: Repuesta[], ){
+    constructor(descripcion: string, repuesta: Repuesta[]){
         this.decripcion = descripcion;
-        this.listRepuesta=repuesta;
+        this.listRepuesta = repuesta;
     }
 }

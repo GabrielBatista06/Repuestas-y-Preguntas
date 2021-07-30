@@ -25,6 +25,7 @@ import { LoadingComponent } from './shared/loading/loading.component';
 import { NuevoCuestionarioComponent } from './components/dashboard/cuestionario/nuevo-cuestionario/nuevo-cuestionario.component';
 import { PasoUnoComponent } from './components/dashboard/cuestionario/nuevo-cuestionario/paso-uno/paso-uno.component';
 import { NuevaPreguntaComponent } from './components/dashboard/cuestionario/nuevo-cuestionario/paso-dos/nueva-pregunta/nueva-pregunta.component';
+import { PasoDosComponent } from './components/dashboard/cuestionario/nuevo-cuestionario/paso-dos/paso-dos.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { NuevaPreguntaComponent } from './components/dashboard/cuestionario/nuev
     LoadingComponent,
     NuevoCuestionarioComponent,
     PasoUnoComponent,
+    PasoDosComponent,
     NuevaPreguntaComponent,
     
   ],

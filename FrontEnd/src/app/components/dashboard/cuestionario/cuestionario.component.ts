@@ -13,7 +13,6 @@ export class CuestionarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.getNombreUsuario();
-    // this.nombreUsuario = this.loginService.();
   }
 
   getNombreUsuario():void{

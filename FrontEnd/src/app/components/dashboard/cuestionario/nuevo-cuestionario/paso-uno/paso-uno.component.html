@@ -1,1 +1,26 @@
-<p>paso-uno works!</p>
+<div class="row">
+    <div class="col-lg-6 offset-lg-3">
+        <h3 class="text-center">Datos del Cuestionarios</h3>
+        <br>
+        <form [formGroup]='datosCuestionario' (ngSubmit)="pasoUno()">
+            <div class="form-group">
+                
+                <input type="text" class="form-control" placeholder="Ingrese el titulo del cuestionario" formControlName="titulo">
+                <div class="text-danger "  *ngIf="datosCuestionario.controls['titulo'].errors?.required && datosCuestionario.controls['titulo'].touched" >
+                    El titulo es <strong>obligatorio</strong>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <textarea rows="3" placeholder="Ingrese descripcion del cuestionario"
+                 formControlName="descripcion" class="form-control"></textarea>
+
+                 <div class="text-danger "  *ngIf="datosCuestionario.controls['descripcion'].errors?.required && datosCuestionario.controls['descripcion'].touched" >
+                 La descripcion es <strong>obligatoria</strong>
+                </div>
+            </div>
+
+            <button [disabled]="datosCuestionario.invalid" class="btn btn-success float-right" type="submit">Siguiente</button>
+        </form>
+    </div>
+</div>

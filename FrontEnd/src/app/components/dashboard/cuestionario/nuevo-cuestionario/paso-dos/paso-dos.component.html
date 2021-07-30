@@ -1,1 +1,20 @@
-<p>paso-dos works!</p>
+<div class="row">
+    <div class="col-lg-6">
+        <h3 class="text-center">Listado de pregunta</h3>
+        <hr>
+        <div *ngIf="listPreguntas.length ==0">
+            <h6>No hay preguntas para mostrar</h6>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <h3 class="text-center">
+            Nueva pregunta
+        </h3>
+        <hr>
+        <app-nueva-pregunta></app-nueva-pregunta>
+    </div>
+</div>
+
+<button class="btn btn-success btn-lg btnFinalizar"
+[disabled]="listPreguntas.length ==0">Finalizar Cuestionario</button>
