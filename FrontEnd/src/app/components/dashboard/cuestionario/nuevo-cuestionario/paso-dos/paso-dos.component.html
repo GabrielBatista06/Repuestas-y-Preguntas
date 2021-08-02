@@ -2,6 +2,32 @@
     <div class="col-lg-6">
         <h3 class="text-center">Listado de pregunta</h3>
         <hr>
+        <div class="card mb-2" *ngFor="let pregunta of listPreguntas, let i = index">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <div style="width: 70%;">
+                    <h5>{{pregunta.decripcion}}</h5>
+                </div>
+                <div style="width: 30%;">
+                    <button class="btn btn-primary btn-sm ml-1 mt-1"
+                        (click)="pregunta.hide =!pregunta.hide">Mostrar</button>
+                    <button class="btn btn-danger btn-sm ml-1 mt-1" (click)="eliminarPregunta(i)">Eliminar</button>
+                </div>
+            </div>
+            <div class="card-body" [hidden]="pregunta.hide">
+                <div class="list-group">
+                    <li class="list-group-item" *ngFor="let repuesta of pregunta.listRepuesta"
+                        [ngClass]="{'list-group-item-success': repuesta.esCorrecta == true}">
+                        {{repuesta.descripcion}}
+
+                        <span class="material-icons" *ngIf="repuesta.esCorrecta == true">
+                            thumb_up_off_alt
+                        </span>
+
+                    </li>
+                </div>
+
+            </div>
+        </div>
         <div *ngIf="listPreguntas.length ==0">
             <h6>No hay preguntas para mostrar</h6>
         </div>
@@ -12,9 +38,9 @@
             Nueva pregunta
         </h3>
         <hr>
-        <app-nueva-pregunta></app-nueva-pregunta>
+        <app-nueva-pregunta (enviarPregunta)="guardarPregunta($event)"></app-nueva-pregunta>
     </div>
 </div>
 
-<button class="btn btn-success btn-lg btnFinalizar"
-[disabled]="listPreguntas.length ==0">Finalizar Cuestionario</button>
+<button class="btn btn-success btn-lg btnFinalizar" [disabled]="listPreguntas.length ==0">Finalizar
+    Cuestionario</button>

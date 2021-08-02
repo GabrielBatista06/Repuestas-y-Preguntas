@@ -23,5 +23,13 @@ export class PasoDosComponent implements OnInit {
     this.tituloCuestionario=this.cuestionariService.tituloCuestionario;
     this.descripcionCuestionario=this.cuestionariService.descripcionCuestionario;
   }
+  
+  guardarPregunta(pregunta:Pregunta): void{
+    this.listPreguntas.push(pregunta);
+    console.log(this.listPreguntas);
+  }
 
+  eliminarPregunta(index:number): void{
+    this.listPreguntas.splice(index,1);
+  }
 }

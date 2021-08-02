@@ -1,23 +1,33 @@
 <form [formGroup]="nuevaPregunta">
 
     <div class="form-group input-group-lg">
-        <input type="text" class="form-control" placeholder="Ingrese Pregunta ">
+        <input type="text" class="form-control" placeholder="Ingrese Pregunta" formControlName="titulo">
+
+        <span class="text-danger"
+            *ngIf="nuevaPregunta.controls['titulo'].errors?.required && nuevaPregunta.controls['titulo'].touched">
+            Este campo es <strong> obligatorio*</strong>
+        </span>
 
     </div>
     <div formArrayName="repuesta" *ngFor="let item of getRepuestas.controls; let i = index">
         <div class="input-group" [formGroupName]="i" style="padding-top: 10px">
-            <input type="text" class="form-control" placeholder="Repuesta {{ i + 1 }}"  formControlName="descripcion">
+            <input type="text" class="form-control" placeholder="Repuesta {{ i + 1 }}" formControlName="descripcion">
             <div class="input-group-prepend">
                 <div class="input-group-text">
-                    <input type="radio" name="esCorrecta" formControlName="esCorrecta">
+                    <input type="radio" name="esCorrecta" (change)="setRespuestaValida(i)" [value]="i" formControlName="esCorrecta">
                 </div>
             </div>
             <span class="material-icons delete-icon" (click)="eliminarRepuesta(i)">delete</span>
         </div>
+        <!-- <span class="text-danger"
+            *ngIf="item.controls['descripcion'].errors?.required && item.controls['descripcion'].touched">
+            Este campo es <strong> obligatorio*</strong>
+        </span> --> 
     </div>
 
-    <span class="material-icons add-icon" (click)= "agregarRepuesta()">add</span>
+    <span class="material-icons add-icon" (click)="agregarRepuesta()">add</span>
+    
     <br>
     <br>
-    <button class="btn btn-primary float-right">Agregar</button>
+    <button class="btn btn-primary float-right" (click)="agregarPregunta()">Agregar</button>
 </form>
