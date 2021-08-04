@@ -8,8 +8,8 @@ import { Cuestionario } from '../models/cuestionario';
   providedIn: 'root'
 })
 export class CuestionarioService {
-  tituloCuestionario='';
-  descripcionCuestionario='';
+  tituloCuestionario!: string;
+  descripcionCuestionario!:string;
   myAppUrl: string;
   myApiUrl: string;
 
@@ -18,8 +18,8 @@ export class CuestionarioService {
     this.myApiUrl='/api/Cuestionario';
    }
 
-   guardarCuestionario(cuestionario:Cuestionario):Observable <any>{
+   guardarCuestionario(cuestionario: Cuestionario): Observable<any>{
 
-    return this.http.post(this.myAppUrl+this.myApiUrl,cuestionario);
+    return this.http.post(this.myAppUrl + this.myApiUrl, cuestionario);
    }
 }

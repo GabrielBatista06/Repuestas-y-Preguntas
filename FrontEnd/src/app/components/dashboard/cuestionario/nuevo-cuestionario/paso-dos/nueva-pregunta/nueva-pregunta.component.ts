@@ -82,9 +82,10 @@ export class NuevaPreguntaComponent implements OnInit {
   }
 
   reset(): void{
+    this.rtaCorrecta=0;
     this.nuevaPregunta.reset();
     this.getRepuestas.clear();
     this.agregarRepuestaForDefault();
-    this.rtaCorrecta=0;
+ 
   }
 }

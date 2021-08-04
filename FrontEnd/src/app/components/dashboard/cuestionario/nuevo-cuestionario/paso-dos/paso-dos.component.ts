@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Cuestionario } from 'src/app/models/cuestionario';
 import { Pregunta } from 'src/app/models/pregunta';
 import { CuestionarioService } from 'src/app/services/cuestionario.service';
 
@@ -15,13 +16,15 @@ export class PasoDosComponent implements OnInit {
 
   listPreguntas: Pregunta[] =[];
 
-  constructor(private cuestionariService: CuestionarioService,
+  loading=false;
+
+  constructor(private cuestionarioService: CuestionarioService,
               private toastr: ToastrService,
               private router: Router ) { }
 
   ngOnInit(): void {
-    this.tituloCuestionario=this.cuestionariService.tituloCuestionario;
-    this.descripcionCuestionario=this.cuestionariService.descripcionCuestionario;
+    this.tituloCuestionario=this.cuestionarioService.tituloCuestionario;
+    this.descripcionCuestionario=this.cuestionarioService.descripcionCuestionario;
   }
   
   guardarPregunta(pregunta:Pregunta): void{
@@ -31,5 +34,26 @@ export class PasoDosComponent implements OnInit {
 
   eliminarPregunta(index:number): void{
     this.listPreguntas.splice(index,1);
+  }
+
+  guardarCuestionario(): void {
+    const cuestionario : Cuestionario={
+      nombre: this.tituloCuestionario,
+      descripcion: this.descripcionCuestionario,
+      listPreguntas: this.listPreguntas
+
+
+    };
+    this.loading=true;
+    console.log(cuestionario);
+    this.cuestionarioService.guardarCuestionario(cuestionario).subscribe(data =>{
+      this.toastr.success('El cuestionario fue registrado con exito', 'Registrado Exitosamente');
+      this.router.navigate(['/dashboard']);
+      this.loading=false;
+    }, error => {
+      this.toastr.error('Uiiii!, Ocurrio un error', 'Error!');
+      this.router.navigate(['/dashboard']);
+      this.loading=false; 
+    });
   }
 }

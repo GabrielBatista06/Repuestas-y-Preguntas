@@ -1,3 +1,6 @@
+<div class="text-center">
+    <app-loading *ngIf="loading"></app-loading>
+</div>
 <div class="row">
     <div class="col-lg-6">
         <h3 class="text-center">Listado de pregunta</h3>
@@ -42,5 +45,5 @@
     </div>
 </div>
 
-<button class="btn btn-success btn-lg btnFinalizar" [disabled]="listPreguntas.length ==0">Finalizar
+<button class="btn btn-success btn-lg btnFinalizar" [disabled]="listPreguntas.length == 0" (click)="guardarCuestionario()">Finalizar
     Cuestionario</button>
