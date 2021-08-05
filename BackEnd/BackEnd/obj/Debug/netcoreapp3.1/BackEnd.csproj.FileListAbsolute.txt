@@ -29,7 +29,9 @@ C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreap
 C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\Admin\Desktop\Repuestas-y-Preguntas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll

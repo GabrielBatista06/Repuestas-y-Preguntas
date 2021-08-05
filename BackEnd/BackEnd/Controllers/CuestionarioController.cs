@@ -26,7 +26,7 @@ namespace BackEnd.Controllers
 
         [HttpPost]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<IActionResult> Post([FromBody]Cuestionario cuestionario)
+        public async Task <IActionResult> Post([FromBody]Cuestionario cuestionario)
         {
             try
             {

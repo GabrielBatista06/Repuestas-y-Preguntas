@@ -129,7 +129,7 @@ namespace BackEnd.Migrations
             modelBuilder.Entity("BackEnd.Domain.Models.Pregunta", b =>
                 {
                     b.HasOne("BackEnd.Domain.Models.Cuestionario", "Cuestionario")
-                        .WithMany("Preguntas")
+                        .WithMany("listPreguntas")
                         .HasForeignKey("CuestionarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -140,7 +140,7 @@ namespace BackEnd.Migrations
             modelBuilder.Entity("BackEnd.Domain.Models.Respuesta", b =>
                 {
                     b.HasOne("BackEnd.Domain.Models.Pregunta", "Pregunta")
-                        .WithMany("Respuesta")
+                        .WithMany("listRepuesta")
                         .HasForeignKey("PreguntaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -150,12 +150,12 @@ namespace BackEnd.Migrations
 
             modelBuilder.Entity("BackEnd.Domain.Models.Cuestionario", b =>
                 {
-                    b.Navigation("Preguntas");
+                    b.Navigation("listPreguntas");
                 });
 
             modelBuilder.Entity("BackEnd.Domain.Models.Pregunta", b =>
                 {
-                    b.Navigation("Respuesta");
+                    b.Navigation("listRepuesta");
                 });
 #pragma warning restore 612, 618
         }

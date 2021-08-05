@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BackEnd.Migrations
 {
-    public partial class v11 : Migration
+    public partial class cuestionario : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
