@@ -65,7 +65,7 @@ export class NuevaPreguntaComponent implements OnInit {
 
     const arrayRta: Repuesta[] = [];
 
-    arrayRespuestas.forEach((element: { descripcion: string; esCorrecta: any; }, index: any) => {
+    arrayRespuestas.forEach((element: { descripcion: string; }, index:number): void => {
       const respuesta: Repuesta = new Repuesta(element.descripcion, false);
       if (index === this.rtaCorrecta){
         respuesta.esCorrecta =true;

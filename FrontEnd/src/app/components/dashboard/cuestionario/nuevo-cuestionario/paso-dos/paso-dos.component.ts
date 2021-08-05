@@ -14,7 +14,7 @@ export class PasoDosComponent implements OnInit {
   tituloCuestionario='';
   descripcionCuestionario='';
 
-  listPreguntas: Pregunta[] =[];
+  listPreguntas: Pregunta[] =[]; 
 
   loading=false;
 
@@ -39,7 +39,7 @@ export class PasoDosComponent implements OnInit {
   guardarCuestionario(): void {
     const cuestionario : Cuestionario={
       nombre: this.tituloCuestionario,
-      descripcion: this.descripcionCuestionario,
+      Descripcion: this.descripcionCuestionario,
       listPreguntas: this.listPreguntas
 
 

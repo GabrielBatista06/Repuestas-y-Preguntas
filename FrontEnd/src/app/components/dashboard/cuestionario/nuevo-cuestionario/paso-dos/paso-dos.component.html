@@ -8,7 +8,7 @@
         <div class="card mb-2" *ngFor="let pregunta of listPreguntas, let i = index">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <div style="width: 70%;">
-                    <h5>{{pregunta.decripcion}}</h5>
+                    <h5>{{pregunta.Descripcion}}</h5>
                 </div>
                 <div style="width: 30%;">
                     <button class="btn btn-primary btn-sm ml-1 mt-1"
@@ -20,7 +20,7 @@
                 <div class="list-group">
                     <li class="list-group-item" *ngFor="let repuesta of pregunta.listRepuesta"
                         [ngClass]="{'list-group-item-success': repuesta.esCorrecta == true}">
-                        {{repuesta.descripcion}}
+                        {{repuesta.Descripcion}}
 
                         <span class="material-icons" *ngIf="repuesta.esCorrecta == true">
                             thumb_up_off_alt

@@ -1,12 +1,12 @@
 import { Repuesta } from "./repuesta";
 
 export class Pregunta{
-    decripcion: string;
+    Descripcion: string;
     listRepuesta: Repuesta[];
     hide?:boolean;
 
-    constructor(descripcion: string, repuesta: Repuesta[]){
-        this.decripcion = descripcion;
+    constructor(Descripcion: string, repuesta: Repuesta[]){
+        this.Descripcion = Descripcion;
         this.listRepuesta = repuesta;
         this.hide=true;
     }

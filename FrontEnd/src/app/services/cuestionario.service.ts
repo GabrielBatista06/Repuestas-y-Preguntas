@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from '../../environments/environment';
 import { Cuestionario } from '../models/cuestionario';
 
 @Injectable({
@@ -19,6 +19,7 @@ export class CuestionarioService {
    }
 
    guardarCuestionario(cuestionario: Cuestionario): Observable<any>{
+     console.log(JSON.stringify(cuestionario));
 
     return this.http.post(this.myAppUrl + this.myApiUrl, cuestionario);
    }
