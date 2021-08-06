@@ -15,12 +15,16 @@ export class CuestionarioService {
 
   constructor(private http: HttpClient) {
     this.myAppUrl=environment.endpoint;
-    this.myApiUrl='/api/Cuestionario';
+    this.myApiUrl='/api/Cuestionario/';
    }
 
    guardarCuestionario(cuestionario: Cuestionario): Observable<any>{
      console.log(JSON.stringify(cuestionario));
 
     return this.http.post(this.myAppUrl + this.myApiUrl, cuestionario);
+   }
+
+   getLisCuestionario():Observable<any>{
+     return this.http.get(this.myAppUrl + this.myApiUrl + 'GetListCuestionarioByUser');
    }
 }

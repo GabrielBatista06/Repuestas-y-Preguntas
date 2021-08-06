@@ -14,7 +14,7 @@ export class PasoDosComponent implements OnInit {
   tituloCuestionario='';
   descripcionCuestionario='';
 
-  listPreguntas: Pregunta[] =[]; 
+  listPreguntas: Pregunta[] =[];
 
   loading=false;
 
@@ -26,7 +26,7 @@ export class PasoDosComponent implements OnInit {
     this.tituloCuestionario=this.cuestionarioService.tituloCuestionario;
     this.descripcionCuestionario=this.cuestionarioService.descripcionCuestionario;
   }
-  
+
   guardarPregunta(pregunta:Pregunta): void{
     this.listPreguntas.push(pregunta);
     console.log(this.listPreguntas);
@@ -53,7 +53,7 @@ export class PasoDosComponent implements OnInit {
     }, error => {
       this.toastr.error('Uiiii!, Ocurrio un error', 'Error!');
       this.router.navigate(['/dashboard']);
-      this.loading=false; 
+      this.loading=false;
     });
   }
 }

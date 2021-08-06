@@ -7,10 +7,10 @@ export class Cuestionario{
     fechaCreacion?: Date;
     listPreguntas: Pregunta[];
 
-    constructor(nombre: string, descripcion: string, fechaCreacion: Date, listPreguntas: Pregunta[]){
+    constructor(nombre: string, Descripcion: string, fechaCreacion: Date, listPreguntas: Pregunta[]){
 
         this.nombre=nombre;
-        this.Descripcion=descripcion;
+        this.Descripcion=Descripcion;
         this.fechaCreacion=fechaCreacion;
         this.listPreguntas=listPreguntas;
     }

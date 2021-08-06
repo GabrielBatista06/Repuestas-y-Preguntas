@@ -9,3 +9,16 @@
     </div>
 </div>
 </div>
+
+<div class="card-columns mt-3">
+  <div class="card bg-light" *ngFor="let cuestionario of listCuestionarios">
+    <div class="card-body text-center">
+      <h4 class="card-title">{{cuestionario.nombre}}</h4>
+      <p class="card-text">{{cuestionario.descripcion}}</p>
+      <button class="btn btn-success radius">VER</button>
+      <button class="btn btn-danger radius">ELIMINAR</button>
+    </div>
+  </div>
+</div>
+
+
