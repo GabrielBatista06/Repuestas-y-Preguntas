@@ -46,5 +46,84 @@ namespace BackEnd.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [Route("GetListCuestionarioByUser")]
+        [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
+        public async Task<IActionResult> GetListCuestionarioByUser()
+        {
+            try
+            {
+
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                int idUsuario = JwtConfigurator.GetTokenIdUsuario(identity);
+
+
+                var listCuestionario = await _cuestionarioService.GetListCuestionarioByUser(idUsuario);
+                return Ok(listCuestionario);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+
+        }
+
+        [HttpGet("{idCuestionario}")]
+        public async Task<IActionResult>Get (int idCuestionario)
+        {
+            try
+            {
+                var cuestionario = await _cuestionarioService.GetCuestionario(idCuestionario);
+                return Ok(cuestionario); 
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete("{idCuestionario}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+
+        public async Task<IActionResult> Delete(int idCuestionario)
+        {
+            try
+            {
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                int idUsuario = JwtConfigurator.GetTokenIdUsuario(identity);
+
+                var cuestionario = await _cuestionarioService.BuscarCuestionario(idCuestionario, idUsuario);
+                if (cuestionario == null)
+                {
+                    return BadRequest(new { message = "No se encontro ningun cuestionario" });
+                }
+                await _cuestionarioService.EliminarCuestionario(cuestionario);
+                return Ok(new { message = "El cuestionario fue eliminado" });
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+        }
+        [Route("GetListCuestionario")]
+        [HttpGet]
+        public async Task<IActionResult> GetListCuestionarios()
+        {
+            try
+            {
+                var listCuestionario = await _cuestionarioService.GetListCuestionarios ();
+                return Ok(listCuestionario);
+            }
+            catch (Exception ex)
+            {
+
+              return  BadRequest(ex.Message);
+            }
+        }
     }
 }
