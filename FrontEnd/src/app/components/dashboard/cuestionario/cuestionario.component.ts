@@ -13,6 +13,8 @@ export class CuestionarioComponent implements OnInit {
 
   nombreUsuario: any='';
   listCuestionarios:any[] =[];
+  loading =false;
+
   constructor(private loginService: LoginService,
               private cuestionarioService: CuestionarioService,
               private toastr: ToastrService) { }
@@ -28,11 +30,31 @@ export class CuestionarioComponent implements OnInit {
   }
 
   getCuestionarios():void{
-    this.cuestionarioService.getLisCuestionario().subscribe(data =>{
-      console.log(data);
+    this.loading= true;
+    this.cuestionarioService.getLisCuestionarioByUser().subscribe(data =>{
       this.listCuestionarios=data;
+      this.loading=false;
     },error => {
       console.log(error);
+      this.loading=false;
+      this.toastr.error('Uuups!!! Ocurrio un error', 'Error');
     });
   }
+  eliminarCuestionario(idCuestionario: number):void{
+    if(confirm('Estas seguro que deseas eliminar el cuestionario?')){
+      this.loading=true;
+      this.cuestionarioService.deleteCuestionario(idCuestionario).subscribe(data =>{
+        this.loading=false;
+        this.toastr.success('El cuestionario fue eliminado con exito', 'Cuestionario Eliminado');
+        this.getCuestionarios();
+
+      }, error =>{
+          this.loading= false;
+          this.toastr.error('Uuups!!! Ocurrio un error', 'Error');
+      });
+    }
+
 }
+}
+
+

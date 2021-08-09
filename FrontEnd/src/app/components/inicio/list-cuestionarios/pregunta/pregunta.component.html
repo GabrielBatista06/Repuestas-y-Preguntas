@@ -1,1 +1,17 @@
-<p>pregunta works!</p>
+<div class="container">
+  <div class="card text-center">
+    <app-loading *ngIf="loading"></app-loading>
+    <div *ngIf="listPreguntas.length > 0">
+      <h4 class="card-title">{{obtenerPregunta()}}</h4>
+      <ul class="list-group">
+<li class="list-group-item" *ngFor="let respuesta of listPreguntas[getIndex()].listRepuesta">
+  {{respuesta.descripcion}}
+</li>
+      </ul>
+
+      <div class="mt-auto">
+        <button class="btn btn-primary btn-lg next" [disabled]="!rtaConfirmada">NEXT</button>
+      </div>
+    </div>
+  </div>
+</div>

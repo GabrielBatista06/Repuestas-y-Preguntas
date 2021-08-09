@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 import{HttpClientModule, HTTP_INTERCEPTORS}from '@angular/common/http';
-
+import{FormsModule} from '@angular/forms';
 // Interceptos
 
 import{AddTokenInterceptor} from '../app/helpers/add-token.interceptor';
@@ -53,7 +53,7 @@ import { RespuestaCuestionarioComponent } from './components/inicio/list-cuestio
     IngresarNombreComponent,
     PreguntaComponent,
     RespuestaCuestionarioComponent,
-    
+
   ],
   imports: [
     BrowserModule,
@@ -61,7 +61,8 @@ import { RespuestaCuestionarioComponent } from './components/inicio/list-cuestio
     ReactiveFormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true }],
   bootstrap: [AppComponent]

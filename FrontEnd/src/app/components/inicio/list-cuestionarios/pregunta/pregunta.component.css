@@ -1,0 +1,22 @@
+.container{
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.card{
+  padding: 20px;
+  width: 100%;
+}
+
+.next{
+  background: #f04f44;
+  border-color:#f04f44 ;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+}
+
+.list-group-item{
+  cursor: pointer;
+}

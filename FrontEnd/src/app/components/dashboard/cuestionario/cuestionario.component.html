@@ -9,16 +9,20 @@
     </div>
 </div>
 </div>
-
+<div class="text-center" style="margin-top: -30px;">
+  <app-loading *ngIf="loading"></app-loading>
+</div>
 <div class="card-columns mt-3">
   <div class="card bg-light" *ngFor="let cuestionario of listCuestionarios">
     <div class="card-body text-center">
       <h4 class="card-title">{{cuestionario.nombre}}</h4>
       <p class="card-text">{{cuestionario.descripcion}}</p>
-      <button class="btn btn-success radius">VER</button>
-      <button class="btn btn-danger radius">ELIMINAR</button>
+      <button class="btn btn-success radius" routerLink="/dashboard/verCuestionario/{{cuestionario.id}}">VER</button>
+      <button class="btn btn-danger radius" (click)="eliminarCuestionario(cuestionario.id)" >ELIMINAR</button>
     </div>
   </div>
 </div>
+
+<h3 *ngIf="listCuestionarios.length == 0 && loading == false" >No hay cuestionario para mostrar</h3>
 
 

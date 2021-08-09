@@ -1,0 +1,23 @@
+.container{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-ing{
+  margin-top: 8px;
+  background-color: #f05f44;
+  border-radius: 5px;
+  border-color: #f05f44;
+  color: whitesmoke;
+}
+
+.row{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.saludo{
+  background-color: #3795e8;
+}

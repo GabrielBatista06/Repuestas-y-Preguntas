@@ -1,0 +1,16 @@
+.container{
+  min-height: 100vh;
+  display: flex;
+    justify-content: center;
+  align-items: center;
+}
+.next{
+  background-color: #f05f44;
+  border-color:#f05f44 ;
+  margin-left: 10px;
+}
+
+input[placeholder]{
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
