@@ -1,0 +1,28 @@
+.container{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.card{
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.correct{
+  float: right;
+  color: #17a2b8;
+  font-size: 25px;
+  margin-left: -25px;
+}
+
+.incorrect{
+  float: right;
+  color: red;
+  font-size: 25px;
+  margin-left: -25px;
+}

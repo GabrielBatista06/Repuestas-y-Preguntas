@@ -39,4 +39,5 @@ export class CuestionarioService {
    getListCuestionarios():Observable<any>{
      return this.http.get(this.myAppUrl + this.myApiUrl + 'GetListCuestionario');
    }
+
 }

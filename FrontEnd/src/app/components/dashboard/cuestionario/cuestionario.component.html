@@ -1,13 +1,14 @@
 <div class="jumbotron text-center">
 
-<h1>Bienvenido/a {{nombreUsuario}}!</h1>
-<p class="lead text-muted">Cuestionario</p>
+  <h1>Bienvenido/a {{nombreUsuario}}!</h1>
+  <p class="lead text-muted">Cuestionario</p>
 
-<div class="row">
+  <div class="row">
     <div class="col-lg-6 offset-lg-3">
-        <button class="btn btn-success btn-block btn-cues" routerLink="/dashboard/nuevoCuestionario/pasoUno">NUEVO CUESTIONARIO</button>
+      <button class="btn btn-success btn-block btn-cues" routerLink="/dashboard/nuevoCuestionario/pasoUno">NUEVO
+        CUESTIONARIO</button>
     </div>
-</div>
+  </div>
 </div>
 <div class="text-center" style="margin-top: -30px;">
   <app-loading *ngIf="loading"></app-loading>
@@ -17,12 +18,15 @@
     <div class="card-body text-center">
       <h4 class="card-title">{{cuestionario.nombre}}</h4>
       <p class="card-text">{{cuestionario.descripcion}}</p>
-      <button class="btn btn-success radius" routerLink="/dashboard/verCuestionario/{{cuestionario.id}}">VER</button>
-      <button class="btn btn-danger radius" (click)="eliminarCuestionario(cuestionario.id)" >ELIMINAR</button>
+      <div class="row">
+        <button class="btn btn-success radius" routerLink="/dashboard/verCuestionario/{{cuestionario.id}}">VER</button>
+         <button class="btn btn-info radius" routerLink="/dashboard/estadisticas/{{cuestionario.id}}">EST</button>
+        <button class="btn btn-danger radius" (click)="eliminarCuestionario(cuestionario.id)">ELIMINAR</button>
+
+      </div>
+
     </div>
   </div>
 </div>
 
-<h3 *ngIf="listCuestionarios.length == 0 && loading == false" >No hay cuestionario para mostrar</h3>
-
-
+<h3 *ngIf="listCuestionarios.length == 0 && loading == false">No hay cuestionario para mostrar</h3>

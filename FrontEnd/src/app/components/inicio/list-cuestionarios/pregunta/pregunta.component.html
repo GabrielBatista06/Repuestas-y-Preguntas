@@ -4,13 +4,14 @@
     <div *ngIf="listPreguntas.length > 0">
       <h4 class="card-title">{{obtenerPregunta()}}</h4>
       <ul class="list-group">
-<li class="list-group-item" *ngFor="let respuesta of listPreguntas[getIndex()].listRepuesta">
+<li class="list-group-item" *ngFor="let respuesta of listPreguntas[getIndex()].listRepuesta"
+ (click)="respuestaSeleccionada(respuesta,respuesta.id)" [ngClass]="AddClassOption(respuesta)">
   {{respuesta.descripcion}}
 </li>
       </ul>
 
       <div class="mt-auto">
-        <button class="btn btn-primary btn-lg next" [disabled]="!rtaConfirmada">NEXT</button>
+        <button class="btn btn-primary btn-lg next" [disabled]="!rtaConfirmada" (click)="Next() ">NEXT</button>
       </div>
     </div>
   </div>

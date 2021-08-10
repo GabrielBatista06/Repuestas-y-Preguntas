@@ -11,8 +11,10 @@ namespace BackEnd.Domain.Models
 
         public int RespuestaCuestionarioId { get; set; }
 
+  
         public RespuestaCuestionario RespuestaCuestionario { get; set; }
 
+        public int RespuestaId { get; set; }
         public  Respuesta Respuesta { get; set; }
     }
 }

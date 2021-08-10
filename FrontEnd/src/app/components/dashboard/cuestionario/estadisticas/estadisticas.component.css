@@ -1,0 +1,11 @@
+.ver{
+cursor: pointer;
+color: blue;
+margin-right: 10px;
+}
+
+.delete{
+  cursor: pointer;
+  color: red;
+
+}

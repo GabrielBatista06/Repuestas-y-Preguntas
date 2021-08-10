@@ -13,7 +13,7 @@ loading = false;
 cuestionario: any={};
   constructor(private cuestionarioService: CuestionarioService,
               private aRoute: ActivatedRoute ) {
-                this.idCuestionario = Number(this.aRoute.snapshot.paramMap.get('id'))
+                this.idCuestionario = Number(this.aRoute.snapshot.paramMap.get('id'));
 
   }
 
