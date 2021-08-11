@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CambiarPasswordComponent } from './components/dashboard/cambiar-password/cambiar-password.component';
 import { CuestionarioComponent } from './components/dashboard/cuestionario/cuestionario.component';
 import { Cuestionario1Component } from './components/dashboard/cuestionario/cuestionario1/cuestionario1.component';
+import { DetalleRespuestaComponent } from './components/dashboard/cuestionario/estadisticas/detalle-respuesta/detalle-respuesta.component';
 import { EstadisticasComponent } from './components/dashboard/cuestionario/estadisticas/estadisticas.component';
 import { NuevoCuestionarioComponent } from './components/dashboard/cuestionario/nuevo-cuestionario/nuevo-cuestionario.component';
 import { PasoDosComponent } from './components/dashboard/cuestionario/nuevo-cuestionario/paso-dos/paso-dos.component';
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path:'cambiarPassword',component:CambiarPasswordComponent},
   {path:'verCuestionario/:id', component: Cuestionario1Component},
   {path:'estadisticas/:id', component: EstadisticasComponent},
+  {path:'detalleRespuesta/:id', component: DetalleRespuestaComponent},
   {path: 'nuevoCuestionario', component:NuevoCuestionarioComponent, children:[
     {path: 'pasoUno',component:PasoUnoComponent},
     {path:'pasoDos',component:PasoDosComponent},

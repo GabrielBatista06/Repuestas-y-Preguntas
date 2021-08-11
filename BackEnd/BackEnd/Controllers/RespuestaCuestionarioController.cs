@@ -17,10 +17,14 @@ namespace BackEnd.Controllers
     [ApiController]
     public class RespuestaCuestionarioController : ControllerBase
     {
-        private readonly IRespuestaCuestionarioService _respuestaCuestionarioService;
-        public RespuestaCuestionarioController(IRespuestaCuestionarioService respuestaCuestionarioService)
+
+        private readonly IRespuestaCuestionarioService _respuestaCuestionarioService;    
+        private readonly ICuestionarioService _cuestionarioService;
+        public RespuestaCuestionarioController(IRespuestaCuestionarioService respuestaCuestionarioService, ICuestionarioService cuestionarioService)
         {
+            
             _respuestaCuestionarioService = respuestaCuestionarioService;
+            _cuestionarioService = cuestionarioService;
         }
         [HttpPost]
         public async Task <IActionResult>Post([FromBody]RespuestaCuestionario respuestaCuestionario)
@@ -79,6 +83,27 @@ namespace BackEnd.Controllers
                 await _respuestaCuestionarioService.EliminarRespuestaCuestionario(respuestaCuestionario);
                 return Ok(new { message = "La repuesta fue eliminada" });
 
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+        }
+        [Route("GetCuestionarioByIdRespuesta/{idRespuesta}")]
+        [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> GetCuestionarioByIdRespuesta(int idRespuesta)
+        {
+            try
+            {   //
+                int idCuestionario = await _respuestaCuestionarioService.GetIdCuestionarioByIdRta(idRespuesta);
+                 
+
+                var cuestionario = await _cuestionarioService.GetCuestionario(idCuestionario);
+
+                var listRespuesta = await _respuestaCuestionarioService.GetListRespuesta(idRespuesta);
+                return Ok(new { cuestionario=cuestionario, respuestas = listRespuesta});
             }
             catch (Exception ex)
             {

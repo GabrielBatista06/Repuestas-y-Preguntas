@@ -16,6 +16,11 @@ namespace BackEnd.Domain.IServices
         Task<RespuestaCuestionario> VerRespuestaCuestionario(int idRtaCuestionario, int idUsuario);
 
         Task EliminarRespuestaCuestionario(RespuestaCuestionario respuestaCuestionario);
+
+        Task<int> GetIdCuestionarioByIdRta(int idRespuestaCuestionario);
+
+        Task<List<RespuestaCuestionarioDetalle>> GetListRespuesta(int idRespuestaCuestionario);
+
     }
 
 }

@@ -1,0 +1,36 @@
+<div class="text-center">
+  <app-loading *ngIf="loading"></app-loading>
+</div>
+
+<div class="text-center" *ngIf="cuestionario != null">
+  <h4 class="card-title">{{cuestionario.nombre | uppercase}}</h4>
+  <p class="card-tet">{{cuestionario.descripcion | uppercase}}</p>
+  <hr>
+  <div *ngFor="let pregunta of cuestionario.listPreguntas; let i=index" style="margin-bottom: 10px;">
+    <div class="card-header">
+      <b>{{pregunta.descripcion}}</b>
+    </div>
+    <ul class="list-group" *ngFor="let respuestas of pregunta.listRepuesta ">
+      <li class="list-group-item"
+        [ngClass]="{'list-group-item-success': respuestas.esCorrecta == true && respuestass[i].respuestaId == respuestas.id,
+        'list-group-item-danger':respuestas.esCorrecta == false && respuestass[i].respuestaId == respuestas.id}">
+        {{respuestas.descripcion}}
+         <span class="material-icons correcta"
+          *ngIf="respuestas.esCorrecta == true && respuestass[i].respuestaId == respuestas.id">
+          sentiment_very_satisfied
+        </span>
+        <span class="material-icons fallida"
+          *ngIf="respuestas.esCorrecta == false && respuestass[i].respuestaId == respuestas.id">
+          mood_bad
+        </span>
+      </li>
+
+    </ul>
+  </div>
+  <div class="row" style="margin-bottom: 20px;">
+    <div class="col-lg-4 offset-lg-4">
+      <button class="btn btn-primary btn-block btn-lg"
+        routerLink="/dashboard/estadisticas/{{cuestionario.id}}">BACK</button>
+    </div>
+  </div>
+</div>

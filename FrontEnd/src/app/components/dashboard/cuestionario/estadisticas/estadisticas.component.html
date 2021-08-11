@@ -16,7 +16,7 @@
       <td>{{cuestionarioRespuesta.fecha | date: 'HH:mm'}}</td>
       <td>
         <div class="float-rigth">
-          <span class="material-icons ver">
+          <span class="material-icons ver" routerLink="/dashboard/detalleRespuesta/{{cuestionarioRespuesta.id}}">
             remove_red_eye
             </span>
             <span class="material-icons delete" (click)="eliminarRespuestaCuestionario(cuestionarioRespuesta.id)">

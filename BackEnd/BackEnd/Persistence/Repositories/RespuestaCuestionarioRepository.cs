@@ -53,5 +53,25 @@ namespace BackEnd.Persistence.Repositories
 
             await _context.SaveChangesAsync();
         }
+
+        public async Task <int> GetIdCuestionarioByIdRta(int idRespuestaCuestionario)
+        {
+            var cuestionario = await _context.RespuestaCuestionarios.Where(x=> x.Id == idRespuestaCuestionario && x.Activo == 1).FirstOrDefaultAsync();
+
+            return cuestionario.CuestionarioId;
+        }
+         
+        public async Task<List<RespuestaCuestionarioDetalle>> GetListRespuesta(int idRespuestaCuestionario)
+        {
+            var listRespuesta = await _context.RespuestaCuestionarioDetalles.Where(x => x.RespuestaCuestionarioId == idRespuestaCuestionario)
+                                                                                   .Select(x => new RespuestaCuestionarioDetalle
+                                                                                   {
+                                                                                       RespuestaId = x.RespuestaId
+
+                                                                                   }).ToListAsync();
+            return listRespuesta;
+
+        }
+
     }
 }
