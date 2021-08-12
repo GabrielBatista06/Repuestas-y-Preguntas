@@ -29,14 +29,21 @@ export class LoginService {
   //   return localStorage.getItem('nombreUsuario');
   //  }
 
+
   getToken(): any{
-    const helper = new JwtHelperService();
-   let t: any = localStorage.getItem('token');
-  const decodedToken = helper.decodeToken(t);
-  return decodedToken;
+      const helper = new JwtHelperService();
+    let t: any = localStorage.getItem('token');
+    const decodedToken = helper.decodeToken(t);
+    return decodedToken;
   }
 
    removeValue(): void{
      localStorage.removeItem('token')
    }
+
+   getTokenRuta():any {//v148
+    return localStorage.getItem('token');
+  }
+
 }
+

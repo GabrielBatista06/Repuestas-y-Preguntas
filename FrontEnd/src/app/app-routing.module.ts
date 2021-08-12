@@ -17,6 +17,7 @@ import { RespuestaCuestionarioComponent } from './components/inicio/list-cuestio
 import { LoginComponent } from './components/inicio/login/login.component';
 import { RegistroComponent } from './components/inicio/registro/registro.component';
 import { InicioComponent } from './componets/inicio/inicio.component';
+import { AuthGuard } from './helpers/auth.guard';
 import { RespuestaCuestionarioService } from './services/respuesta-cuestionario.service';
 
 const routes: Routes = [
@@ -31,7 +32,7 @@ const routes: Routes = [
  {path:'pregunta', component:PreguntaComponent},
  {path:'respuestaCuestionario', component:RespuestaCuestionarioComponent}
  ]},
- {path:'dashboard', component:DashboardComponent, children:[
+ {path:'dashboard', component:DashboardComponent, canActivate: [AuthGuard], children:[
   {path:'',component:CuestionarioComponent},
   {path:'cambiarPassword',component:CambiarPasswordComponent},
   {path:'verCuestionario/:id', component: Cuestionario1Component},

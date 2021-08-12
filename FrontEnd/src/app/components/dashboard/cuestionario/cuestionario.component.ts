@@ -37,7 +37,7 @@ export class CuestionarioComponent implements OnInit {
     },error => {
       console.log(error);
       this.loading=false;
-      this.toastr.error('Uuups!!! Ocurrio un error', 'Error');
+     // this.toastr.error('Uuups!!! Ocurrio un error', 'Error');
     });
   }
   eliminarCuestionario(idCuestionario: number):void{

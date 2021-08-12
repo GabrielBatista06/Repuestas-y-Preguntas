@@ -33,7 +33,7 @@ namespace BackEnd.Utils
                 issuer:Issuer,
                 audience:Audience,
                 claims,
-                expires: DateTime.Now.AddMinutes(60),
+                expires: DateTime.Now.AddHours(2),
                 signingCredentials: credentials
                 );
             return new JwtSecurityTokenHandler().WriteToken(token);
